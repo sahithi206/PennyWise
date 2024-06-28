@@ -48,10 +48,15 @@ function Charts({ sortedTransactions = [] }) {
         <h2 style={{ marginLeft: "1.5rem" }}>Your Analytics</h2>
         <Line {...lineConfig} />
       </div>
-      <div className="PieChart">
+      {pieChartData ?
+      (<div className="PieChart">
         <h2 style={{paddingTop:"0.05rem"}}>Your Spendings</h2>
         <Pie {...pieConfig} onReady={(chartInstance) => (pieChart = chartInstance)}/>
-      </div>
+      </div>)
+      :
+       <></>
+      }
+
     </div>
   );
 }

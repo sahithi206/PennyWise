@@ -55,6 +55,10 @@ export default function Dashboard() {
         toast.error("Transaction amount cannot be zero");
         return;
       }
+      if (isNaN(transaction.amount)) {
+        console.error(`Invalid transaction amount: ${transaction.amount}`);
+        return;
+      }
       try {
         const docRef = await addDoc(
           collection(db, `users/${user.uid}/transactions`),
