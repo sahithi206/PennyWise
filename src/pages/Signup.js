@@ -5,7 +5,6 @@ function Signup() {
   return (
     <div>
       <Index />
-      
       <div className="wrapper">
       <SignupSignincomp />
       </div>
